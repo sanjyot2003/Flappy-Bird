@@ -18,6 +18,7 @@ namespace FlappyBird
         private int firstCloudSpeed = 6;
         private int secondCloudSpeed = 4;
         private bool startGame = false;
+        private bool initial = true;
 
         public FlappyBirdForm()
         {
@@ -30,7 +31,10 @@ namespace FlappyBird
             {
                 if(!startGame)
                 {
-                    restart();
+                    if(!initial)
+                    {
+                        restart();
+                    }
                     gameTimer.Start();
                     startGame = true;
                 }
@@ -92,16 +96,16 @@ namespace FlappyBird
             gameTimer.Stop();
             score.Text = $"Score : {playerScore} ---Game Over---";
             startGame = false;
+            initial = false;
         }
 
         private void restart()
         {
             playerScore = 0;
-            cloudFirst.Location = new Point(3, 47);
-            cloudSecond.Location = new Point(546, 3);
-            flappyBird.Location = new Point(103, 212);
-            pipeTop.Location = new Point(440, -101);
-            pipeBottom.Location = new Point(337, 402);
+            cloudFirst.Left = 3;
+            cloudSecond.Left = 546;
+            pipeTop.Left = 440;
+            pipeBottom.Left = 300;
         }
     }
 }
