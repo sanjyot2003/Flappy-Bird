@@ -12,7 +12,7 @@ namespace FlappyBird
 {
     public partial class FlappyBirdForm : Form
     {
-        private int gravity = 13;
+        private int gravity = 9;
         private int pipeSpeed = 8;
         private int playerScore = 0;
         private int firstCloudSpeed = 6;
@@ -38,7 +38,7 @@ namespace FlappyBird
                     gameTimer.Start();
                     startGame = true;
                 }
-                gravity = -15;
+                gravity = -9;
             }
         }
 
@@ -46,7 +46,7 @@ namespace FlappyBird
         {
             if (e.KeyCode == Keys.Space || e.KeyCode == Keys.Up)
             {
-                gravity = 15;
+                gravity = 9;
             }
         }
 
